@@ -25,6 +25,10 @@ RUN apt-get update && \
     ca-certificates \
     g++ \
     openjdk-11-jre-headless \
+    vim \
+    sudo \
+    bash \
+    git \
     # MMDet Requirements
     ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libsm6 libxrender-dev libxext6 \
     && rm -rf /var/lib/apt/lists/*
@@ -33,7 +37,7 @@ ENV PATH="/opt/conda/bin:$PATH" \
     FORCE_CUDA="1"
 
 # TORCHSEVER
-RUN pip install torchserve torch-model-archiver
+RUN pip install torchserve torch-model-archiver torchinfo
 
 # MMLAB
 ARG PYTORCH
